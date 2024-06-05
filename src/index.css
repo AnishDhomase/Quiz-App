@@ -1,0 +1,146 @@
+:root {
+  --navyclr: #012E91,
+  --skyBlueClr: #00B8B4,
+  --fSkyblueClr: #88EEE1,
+  --whiteClr: #fff,
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  width: 100vw;
+  min-height: 100vh !important;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  background: linear-gradient(
+    109.6deg,
+    rgba(0, 0, 0, 0.93) 11.2%,
+    rgb(63, 61, 61) 78.9%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  width: 45%;
+  min-height: 90vh;
+  min-width: 500px;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  
+  
+}
+.home:before {
+  content: " ";
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 90vh;
+  opacity: 0.15;
+  border-radius: 10px;
+
+  background-image: url("../public/homeBg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home img {
+  width: 35%;
+  min-width: 200px;
+}
+.home .content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.456);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  gap: 30px;
+}
+
+button{
+  cursor: pointer;
+  min-width: 200px;
+}
+button:hover{
+  opacity: 0.9;
+}
+
+
+@media screen and (max-width: 540px) {
+  .App {
+    width: 45%;
+    min-width: 450px;
+  }
+  .home img {
+    width: 35%;
+    min-width: 200px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .App {
+    width: 45%;
+    min-width: 450px;
+  }
+  .home img {
+    width: 35%;
+    min-width: 200px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .App {
+    width: 45%;
+    min-width: 400px;
+  }
+  .home img {
+    width: 35%;
+    min-width: 200px;
+  }
+}
+@media screen and (max-width: 440px) {
+  .App {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    min-width: 290px;
+  }
+  .home{
+    border-radius: 0;
+  }
+  .home img {
+    width: 35%;
+    min-width: 200px;
+  }
+  .home:before {
+    height: 100vh;
+  }
+}
