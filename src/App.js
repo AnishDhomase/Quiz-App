@@ -475,9 +475,9 @@ export const ques = [
   ],
 ];
 const numQuesCategories = ques.length;
-const quesCategory = Math.floor(Math.random() * numQuesCategories);
 
 function App() {
+  const quesCategory = Math.floor(Math.random() * numQuesCategories);
   const [activePage, setActivePage] = useState("home");
   const [numberOfQues, setNumberOfQues] = useState(3);
 
@@ -486,9 +486,10 @@ function App() {
   function handleNumOfQuesChange(newQuesNumber) {
     setNumberOfQues(newQuesNumber);
   }
-  function handlePageChange(event) {
+  function handlePageChange(pageName, event) {
     if (event.target.innerHTML === "Let's Go") setActivePage("custQuiz");
     else if (event.target.innerHTML === "Start Quiz") setActivePage("quiz");
+    else setActivePage("home");
   }
 
   return (
@@ -497,7 +498,7 @@ function App() {
         <HomePage>
           <Button
             onButtonClick={handlePageChange}
-            bgClr="#012E91"
+            bgClr="rgb(169, 127, 255)"
             pad="15px 20px"
           >
             Let's Go
@@ -509,13 +510,21 @@ function App() {
           onNumOfQuesChange={handleNumOfQuesChange}
           numberOfQues={numberOfQues}
         >
-          <Button onButtonClick={handlePageChange} margin="30px 0 0 0">
+          <Button
+            bgClr="rgb(169, 127, 255)"
+            onButtonClick={handlePageChange}
+            margin="30px 0 0 0"
+          >
             Start Quiz
           </Button>
         </CustomizeQuizPage>
       )}
       {activePage === "quiz" && (
-        <QuizPage numberOfQues={numberOfQues} catArr={catArr}></QuizPage>
+        <QuizPage
+          onPageChange={handlePageChange}
+          numberOfQues={numberOfQues}
+          catArr={catArr}
+        ></QuizPage>
       )}
     </div>
   );

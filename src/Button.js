@@ -29,7 +29,7 @@ export function Button({
   return (
     <button
       className="pageNavigatorBtn"
-      onClick={(ev) => onButtonClick(ev)}
+      onClick={(ev) => onButtonClick("", ev)}
       style={btnStyle}
     >
       {children}
